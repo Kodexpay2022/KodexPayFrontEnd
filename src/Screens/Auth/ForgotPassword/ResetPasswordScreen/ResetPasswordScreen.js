@@ -4,10 +4,14 @@ import {connect} from 'react-redux';
 import Button from '../../../../Components/Button';
 import Input from '../../../../Components/Input/Input';
 import Logo from '../../../../Components/Logo/logo';
+import {ROUTERS} from '../../../../utils/navigation';
 // import {ROUTERS} from '../../../utils/navigation';
 import {styles} from '../style';
 
 const ResetPasswordScreen = ({navigation}) => {
+  const handlePressSigIn = () => {
+    navigation.navigate(ROUTERS.SigIn);
+  };
   return (
     <View style={styles.container}>
       <Logo />
@@ -31,7 +35,11 @@ const ResetPasswordScreen = ({navigation}) => {
         </View>
       </View>
       <View style={styles.box}>
-        <Button text={'Save password'} backgroundColor={'#03082a'} />
+        <Button
+          onPress={handlePressSigIn}
+          text={'Save password'}
+          backgroundColor={'#03082a'}
+        />
       </View>
     </View>
   );
